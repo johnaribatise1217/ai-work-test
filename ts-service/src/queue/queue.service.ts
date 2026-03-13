@@ -25,6 +25,10 @@ export class QueueService {
     return job;
   }
 
+  dequeue(): EnqueuedJob | undefined {
+    return this.jobs.shift();
+  }
+
   getQueuedJobs(): readonly EnqueuedJob[] {
     return this.jobs;
   }
