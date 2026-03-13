@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
 import { HttpExceptionFilter } from './Exception/GlobalExceptionFilter';
+import { DatabaseExceptionFilter } from './Exception/DatabaseExceptionFilter';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
@@ -15,7 +16,10 @@ async function bootstrap(): Promise<void> {
     }),
   );
 
-  app.useGlobalFilters(new HttpExceptionFilter())
+  app.useGlobalFilters(
+    new HttpExceptionFilter(),
+    new DatabaseExceptionFilter()
+  )
   const port = Number(process.env.PORT ?? 3000);
   await app.listen(port);
 }
