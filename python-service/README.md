@@ -140,6 +140,7 @@ uvicorn app.main:app --reload --port 8000
 ```
 
 ### Project Structure 
+```bash
 python-service/
 ├── app/
 │   ├── api/                → route definitions
@@ -154,6 +155,7 @@ python-service/
 ├── requirements.txt
 ├── docker-compose.yml      (optional)
 └── main.py
+```
 
 ### API Endpoints
 
