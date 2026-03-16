@@ -1,1 +1,24 @@
-.venv
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+python-service/.venv/
+python-service/.pytest_cache/
+python-service/.coverage

@@ -19,6 +19,11 @@ class ReportFormatter:
         template = self._env.get_template("base.html")
         return template.render(title=title, body=body, generated_at=self.generated_timestamp())
 
+    def render_briefing_report(self, context: dict) -> str:
+        """Render the professional briefing HTML report."""
+        template = self._env.get_template("index.html")
+        return template.render(**context)
+
     @staticmethod
     def generated_timestamp() -> str:
         return datetime.now(timezone.utc).isoformat()

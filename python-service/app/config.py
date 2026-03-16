@@ -2,9 +2,18 @@ from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
 class Settings(BaseSettings):
-    database_url: str = "postgresql+psycopg://assessment_user:assessment_pass@localhost:5432/assessment_db"
+    postgres_db: str
+    postgres_user: str
+    postgres_pass: str
+    postgres_port: int
+
+    @property
+    def database_url(self) -> str:
+        return (
+            f"postgresql+psycopg://{self.postgres_user}:{self.postgres_pass}"
+            f"@localhost:{self.postgres_port}/{self.postgres_db}"
+        )
     app_env: str = "development"
     app_port: int = 8000
 

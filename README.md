@@ -33,8 +33,3 @@ This starts PostgreSQL on `localhost:5432` with:
 
 - Python service setup and commands: [python-service/README.md](python-service/README.md)
 - TypeScript service setup and commands: [ts-service/README.md](ts-service/README.md)
-
-## Notes
-
-- Keep your solution focused on the assessment tasks.
-- Do not replace the project structure with a different architecture.

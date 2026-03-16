@@ -4,14 +4,14 @@ services:
     container_name: backend-assessment-postgres
     environment:
       POSTGRES_DB: assessment_db
-      POSTGRES_USER: assessment_user
-      POSTGRES_PASSWORD: assessment_pass
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: john2004
     ports:
       - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U assessment_user -d assessment_db"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d assessment_db"]
       interval: 5s
       timeout: 5s
       retries: 10
